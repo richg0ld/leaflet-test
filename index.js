@@ -52,6 +52,7 @@ var map = L.map('map', {
   crs: L.CRS.Simple,
   minZoom: 0,
   maxZoom: 3,
+  zoomSnap: .5,
   zoomControl: false, //줌 컨트롤러
   attributionControl: false, // 오른쪽 밑에 워터마크 같은 것
   preferCanvas: true,
@@ -61,7 +62,6 @@ var map = L.map('map', {
 });
 
 map.fitBounds(bounds);
-
 // map.setView({ lat: -500, lng: 1000 }) //맵 원하는 위치로 화면 이동 (킬로그 리스트에서 버튼 클릭 때 사용)
 /**
  * 점 찍는거
@@ -77,4 +77,5 @@ var LeafIcon = L.Icon.extend({
 // var greenO = new LeafIcon({iconUrl: 'icon_direction_green@2x.png'});
 // L.marker([-10, 10], {icon: orangeX}).addTo(map);
 // L.marker([-246, 246], {icon: greenX}).addTo(map);
-heatmapLayer.setData(testData);
+// heatmapLayer.setData(testData);
+map.setView({ lat: -128, lng: 128 }, 0);
