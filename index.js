@@ -28,7 +28,18 @@ var cfg = {
   // which field name in your data represents the longitude - default "lng"
   lngField: 'lng',
   // which field name in your data represents the data value - default "value"
-  valueField: 'count'
+  valueField: 'count',
+  // backgroundColor: 'rgba(0,0,0,.95)',
+  // // custom gradient colors
+  gradient: {
+    // enter n keys between 0 and 1 here
+    // for gradient color customization
+    '.10': '#ffe99f',
+    '.20': '#ffd544',
+    '.30': '#f58c23',
+    '.40': '#ff4e41',
+    '1': '#ea0400'
+  },
 };
 /**
  * 빠운스
@@ -77,5 +88,6 @@ var LeafIcon = L.Icon.extend({
 // var greenO = new LeafIcon({iconUrl: 'icon_direction_green@2x.png'});
 // L.marker([-10, 10], {icon: orangeX}).addTo(map);
 // L.marker([-246, 246], {icon: greenX}).addTo(map);
-// heatmapLayer.setData(testData);
+heatmapLayer.setData(testData);
 map.setView({ lat: -128, lng: 128 }, 0);
+map.on('move', function() { console.log('asdasdasdas')});
